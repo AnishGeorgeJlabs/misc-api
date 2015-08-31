@@ -21,6 +21,3 @@ def test(request):
         "extra": extra
     })
 
-def test_insert(request):
-    get_content_sheet().insert_row(['Testing', 'Row'], 1)
-    return jsonResponse({"success": True})

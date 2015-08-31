@@ -28,3 +28,9 @@ def get_worksheet(i):
 def get_content_sheet():
     return get_worksheet(0)
 
+def append_row_to_content(row):
+    wks = get_content_sheet()
+    size = len(wks.get_all_values())
+    wks.insert_row(row, size + 1)
+    return True
+
