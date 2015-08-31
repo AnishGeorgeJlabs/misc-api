@@ -12,7 +12,7 @@ def local_file(name):
     return filename
 
 def get_worksheet(i):
-    storage = Storage(local_file("creds.dat"))
+    storage = Storage(local_file("creds.data"))
     credentials = storage.get()
     if credentials is None or credentials.invalid:
         flags = tools.argparser.parse_args(args=[])
