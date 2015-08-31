@@ -1,6 +1,7 @@
 from data import basic_success, jsonResponse, db
 from django.http import Http404
 from django.views.decorators.csrf import csrf_exempt
+from external.sheet import get_content_sheet
 
 @csrf_exempt
 def test(request):
@@ -19,3 +20,7 @@ def test(request):
         "Message": "Test api, ECHO",
         "extra": extra
     })
+
+def test_insert(request):
+    get_content_sheet().insert_row(['Testing', 'Row'], 1)
+    return jsonResponse({"success": True})
