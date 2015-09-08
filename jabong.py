@@ -19,7 +19,7 @@ def post_form(request):
         for k in ['brand', 'season', 'category', 'brick']:
             row.append(json.dumps(data.get(k, [])))
         for k in ['percent']:
-            row.append(str(data.get(k, '')))
+            row.append(str(data.get(k, '')) + '%')
         append_row_to_content(row)
         return jsonResponse({"success": True, "data": data})
     except Exception, e:
